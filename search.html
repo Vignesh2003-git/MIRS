@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-3">Search Results</h1>
+        <p class="mt-3">You searched for: <strong>{{ query }}</strong></p>
+        <div class="search-result mt-3">
+            <p>
+                {{ result | safe }}
+            </p>
+        </div>
+        <a class="btn btn-primary mt-3" href="/">Back to Search</a>
+    </div>
+</body>
+
+</html>
