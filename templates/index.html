@@ -2,18 +2,104 @@
 <html>
 
 <head>
-    <title>MIRS Search Application</title>
+    <title>MIRS</title>
+    <style>
+        /* Chat container style */
+        .chat-container {
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        /* Sidebar style */
+        .sidebar {
+            flex: 1;
+            padding: 10px;
+            background: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        /* Chat area style */
+        .chat-area {
+            flex: 3;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        /* Chat message style */
+        .chat-message {
+            background: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+
+        /* User's message style */
+        .user-message {
+            background: #cae8ea;
+        }
+
+        /* Bot's message style */
+        .bot-message {
+            background: #fff1d0;
+        }
+
+        /* "New Search" button style */
+        .new-search-button {
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>MIRS Search Application</h1>
-    <!-- <script async src="https://cse.google.com/cse.js?cx=d18cf906a50574eb7">
-    </script>
-    <div class="gcse-search"></div> -->
-    <form method="POST" action="/search">
-        <input type="text" name="query" placeholder="Enter your search query" required>
-        <button type="submit">Search</button>
-    </form>
+    <div class="chat-container">
+        <!-- Sidebar for chat history -->
+        <div class="sidebar">
+            <h2>Chat History</h2>
+            <!-- List of previous chats with titles -->
+            <ul>
+                <li><strong>Search 1:</strong> Rocket Engines</li>
+                <li><strong>Search 2:</strong> Artificial Intelligence</li>
+                <!-- Add more chat titles as needed -->
+            </ul>
+        </div>
+
+        <!-- Chat area for current chat -->
+        <div class="chat-area">
+            <h1>MIRS Open-Source</h1>
+
+            <!-- User's previous search query -->
+            <div class="chat-message user-message">
+                <p><strong>User:</strong> {{ query }}</p>
+            </div>
+
+            <!-- Chat input for new search -->
+            <div class="chat-message">
+                <form method="POST" action="/search">
+                    <input type="text" name="query" placeholder="Enter your search query" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            <!-- Display search results within the conversation -->
+            <div class="chat-message bot-message">
+                <p><strong>Bot:</strong> Search results:</p>
+                <!-- Include the search results here -->
+                <p>Result 1: Lorem ipsum</p>
+                <p>Result 2: Dolor sit amet</p>
+                <!-- Add more results as needed -->
+            </div>
+
+            <!-- "New Search" button as a plus icon -->
+            <div class="new-search-button" onclick="window.location.href='/';">+</div>
+        </div>
+    </div>
 </body>
 
 </html>
