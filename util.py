@@ -27,6 +27,13 @@ def get_html_contents_of_urls(url_list):
     return html_contents
 
 # Example usage:
-urls = ["https://en.wikipedia.org/", "https://www.javatpoint.com/"]
+urls = ["https://en.wikipedia.org/wiki/Main_Page", "https://www.javatpoint.com/"]
 result = get_html_contents_of_urls(urls)
-print(result)
+
+
+for content in result:
+    try:
+        print("+ = "*100)
+        print(content)
+    except UnicodeEncodeError:
+        print("UnicodeEncodeError: Unable to print content.")
