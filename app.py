@@ -1,5 +1,8 @@
 from flask import Flask, request, render_template
 import requests
+from util import read_credentials_file
+
+cred_json = read_credentials_file("Credentials.json")
 
 app = Flask(__name__)
 
@@ -7,8 +10,8 @@ app = Flask(__name__)
 def perform_search(query, api_key, cx):
     base_url = "https://www.googleapis.com/customsearch/v1"
     params = {
-        "key": api_key,
-        "cx": cx,
+        "key": cred_json['Google_Search']['google_Search_key'],
+        "cx": cred_json['Google_Search']['google_Search_cx'],
         "q": query,
     }
 
