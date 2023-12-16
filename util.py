@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-def read_credentials_file(file_path):
+def read_credentials_file(file_path) :
     try:
         with open(file_path, 'r') as file:
             credentials = json.load(file)
@@ -39,14 +39,3 @@ def get_html_contents_of_urls(url_list):
         html_contents.append(text_content)
     return html_contents
 
-# # Example usage:
-# urls = ["https://en.wikipedia.org/wiki/Main_Page", "https://www.javatpoint.com/"]
-# result = get_html_contents_of_urls(urls)
-
-
-# for content in result:
-#     try:
-#         print("+ = "*100)
-#         print(content)
-#     except UnicodeEncodeError:
-#         print("UnicodeEncodeError: Unable to print content.")
