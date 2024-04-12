@@ -1,16 +1,21 @@
 import SearchMan 
+import AiMan as A
 
 class ContentMan:
     def __init__(self):
+        self.Ai = A.AiMan()
         self.GeneratedView = ""
+        self.AiGeneratedSummary = ""
+        self.youtubeLinks =[]
+        self.imagesLinks = []
 
-    def GenerateWebPagebasedOnContent(self,TextContent,imageURLs,videURLs):
-        pass
+    def GenerateWebPagebasedOnContent(self,TextContent):
 
-    def create_html_file(self,search_results, output_file=r'templates\search_results.html'):
+        self.AiGeneratedSummary = self.Ai.ProcessContentData(TextContent)
 
 
-        
+    def create_html_file(self, search_results, output_file=r'templates\search_results.html'):
+
         html_content = """
         <!DOCTYPE html>
         <html lang="en">
@@ -23,6 +28,19 @@ class ContentMan:
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                     margin: 20px;
                     background-color: #f8f9fa;
+                    display: flex; /* Make the body a flex container */
+                }
+                .search-results {
+                    flex: 1; /* Take up remaining space */
+                    margin-right: 20px; /* Add space between search results and summary */
+                }
+                .summary {
+                    
+                    flex: 1; /* Take up remaining space */
+                    background-color: #ffffff; /* Background color for the summary section */
+                    border-radius: 8px; /* Rounded corners */
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+                    padding: 15px; /* Padding to add space inside the summary section */
                 }
                 h1 {
                     text-align: center;
@@ -58,7 +76,8 @@ class ContentMan:
             </style>
         </head>
         <body>
-            <h1>MIRS Search Results</h1>
+            <div class="search-results">
+                <h1>MIRS Search Results</h1>
         """
 
         for result in search_results:
@@ -67,7 +86,7 @@ class ContentMan:
                 <div class="title"><a href="{result['link']}" target="_blank">{result['title']}</a></div>
                 <div class="url">{result['formattedUrl']}</div>
                 <div class="snippet">{result['snippet']}</div>
-            """
+        """
 
             if 'pagemap' in result and 'cse_thumbnail' in result['pagemap']:
                 thumbnail = result['pagemap']['cse_thumbnail'][0]['src']
@@ -77,14 +96,17 @@ class ContentMan:
             </div>
             """
 
-        html_content += """
+        html_content += f"""
+            </div>
+            <div class="summary">
+                <!-- Summary container -->
+                <h2>MIRS Summary</h2>
+                <!-- Summary title -->
+                {self.AiGeneratedSummary}
+            </div>
         </body>
         </html>
         """
-
-        with open(output_file, 'w', encoding='utf-8') as file:
-            file.write(html_content)
-
 
         with open(output_file, 'w', encoding='utf-8') as file:
             file.write(html_content)

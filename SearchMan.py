@@ -14,6 +14,7 @@ class SearchMan:
         }
         response = requests.get(base_url, params=params)
         data = response.json()
+        print(response.json())
         search_results = data.get("items", [])
         return search_results
 
