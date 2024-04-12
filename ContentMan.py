@@ -7,7 +7,10 @@ class ContentMan:
     def GenerateWebPagebasedOnContent(self,TextContent,imageURLs,videURLs):
         pass
 
-    def create_html_file(self,search_results, output_file='search_results.html'):
+    def create_html_file(self,search_results, output_file=r'templates\search_results.html'):
+
+
+        
         html_content = """
         <!DOCTYPE html>
         <html lang="en">
@@ -87,13 +90,7 @@ class ContentMan:
             file.write(html_content)
 
         return html_content
-x = ContentMan()
 
-obj = SearchMan.SearchMan()
-
-result = obj.QueryInternetForWebLinks("Mugundan S Kalasalingam University")
-
-print(x.create_html_file(result))
 
 
 
