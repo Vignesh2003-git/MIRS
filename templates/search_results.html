@@ -49,88 +49,113 @@
                     color: #6C757D;
                     margin-bottom: 15px;
                 }
-                .image {
-                    max-width: 100%;
-                    height: auto;
-                    margin-top: 10px;
-                    border-radius: 8px;
+
+                hr {
+                    border: 1px solid black;
+                    width: 100%;
                 }
-            </style>
-        </head>
-        <body>
-            <div class="search-results">
-                <h1>MIRS Search Results</h1>
-        
-            <div class="result">
-                <div class="title"><a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank">Artificial intelligence - Wikipedia</a></div>
-                <div class="url">https://en.wikipedia.org/wiki/Artificial_intelligence</div>
-                <div class="snippet">It is a field of research in computer science that develops and studies methods and software which enable machines to perceive their environment and uses ...</div>
-        
-            </div>
+
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between images */
+}
+
+/* Style for individual images */
+.image-container img {
+    width: calc(50% - 10px); /* 50% of the container width minus half the gap */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    object-fit: cover; /* Ensure the image covers the entire container */
+}
+                .youtube-video {
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
+                .youtube-video-title {
+                    font-size: 1.5em;
+}
+                            </style>
+                        </head>
+                        <body>
+                            <div class="search-results">
+                                <h1>MIRS Search Results</h1>
+                        
+                <div class="result">
+                    <div class="title"><a href="https://www.spacex.com/" target="_blank">SpaceX</a></div>
+                    <div class="url">https://www.spacex.com/</div>
+                    <div class="snippet">SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, ...</div>
+            <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRwIuqCGwH12ucCiceqeGczkdt8BwAKzqPNJBKkuAyc9UC3kHfUT-UkDSR&s" alt="Result Thumbnail">
+                </div>
+                
+                <div class="result">
+                    <div class="title"><a href="https://twitter.com/SpaceX" target="_blank">SpaceX (@SpaceX) / X</a></div>
+                    <div class="url">https://twitter.com/SpaceX</div>
+                    <div class="snippet">SpaceX designs, manufactures and launches the world's most advanced rockets and spacecraft.</div>
+            <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT02ZRmau0Po17KQMnXP7YBiSXG3mzM4eVH6EQD3_kSaQkRHlTlLrKlFnU&s" alt="Result Thumbnail">
+                </div>
+                
+                <div class="result">
+                    <div class="title"><a href="https://www.spacex.com/launches/" target="_blank">Launches - SpaceX</a></div>
+                    <div class="url">https://www.spacex.com/launches/</div>
+                    <div class="snippet">SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, ...</div>
+            <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRwIuqCGwH12ucCiceqeGczkdt8BwAKzqPNJBKkuAyc9UC3kHfUT-UkDSR&s" alt="Result Thumbnail">
+                </div>
+                
+                <div class="result">
+                    <div class="title"><a href="http://starlink.com/" target="_blank">Starlink</a></div>
+                    <div class="url">http://starlink.com/</div>
+                    <div class="snippet">HIGH-SPEED INTERNET · Available almost anywhere on Earth. · CONNECTIVITY WHERE YOU LEAST EXPECT IT · GET ONLINE IN MINUTES · NO CONTRACTS · ENGINEERED BY SPACEX.</div>
+            <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKYtLY2fIQ48UATeWY0T3zoY_pDh6RdEFtY8xuOD8vMbY2r-jA3OZXw4&s" alt="Result Thumbnail">
+                </div>
+                
+                <div class="result">
+                    <div class="title"><a href="https://en.wikipedia.org/wiki/SpaceX" target="_blank">SpaceX - Wikipedia</a></div>
+                    <div class="url">https://en.wikipedia.org/wiki/SpaceX</div>
+                    <div class="snippet">The company was founded in 2002 by Elon Musk with the goal of reducing space transportation costs and ultimately developing a sustainable colony on Mars. The ...</div>
             
-            <div class="result">
-                <div class="title"><a href="https://www.ibm.com/topics/artificial-intelligence" target="_blank">What is Artificial Intelligence (AI)? | IBM</a></div>
-                <div class="url">https://www.ibm.com/topics/artificial-intelligence</div>
-                <div class="snippet">Artificial intelligence (AI) is technology that enables computers and digital devices to learn, read, write, create and analyze.</div>
-        <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfMIKJX3sUQGozyDLhy3ChwYLPUzn7K5EYaROcmPBnt2now5C4GApXycc9&s" alt="Result Thumbnail">
-            </div>
-            
-            <div class="result">
-                <div class="title"><a href="https://www.techtarget.com/searchenterpriseai/definition/AI-Artificial-Intelligence" target="_blank">What is Artificial Intelligence and How Does AI Work? | Definition ...</a></div>
-                <div class="url">https://www.techtarget.com/searchenterpriseai/.../AI-Artificial-Intelligence</div>
-                <div class="snippet">Artificial intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems. Read the full definition.</div>
-        <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFaWySxbI0tz9CPdmU3_sZEQ-nmP2f-_ACHM6MxC3-kIaVhTEDECEdRt0&s" alt="Result Thumbnail">
-            </div>
-            
-            <div class="result">
-                <div class="title"><a href="https://www.sas.com/en_us/insights/analytics/what-is-artificial-intelligence.html" target="_blank">Artificial Intelligence (AI): What it is and why it matters | SAS</a></div>
-                <div class="url">https://www.sas.com/en_us/insights/.../what-is-artificial-intelligence.html</div>
-                <div class="snippet">AI automates repetitive learning and discovery through data. Instead of automating manual tasks, AI performs frequent, high-volume, computerized tasks. And it ...</div>
-        <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqg6Lmx4I4m2P4Ufrhe3OUpdhbREoVrn_WJLp5uG4boSVbc9yw7EBsZGth&s" alt="Result Thumbnail">
-            </div>
-            
-            <div class="result">
-                <div class="title"><a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank">Artificial intelligence (AI) | Definition, Examples, Types, Applications ...</a></div>
-                <div class="url">https://www.britannica.com/technology/artificial-intelligence</div>
-                <div class="snippet">2 days ago ... Artificial intelligence, the ability of a computer or computer-controlled robot to perform tasks commonly associated with intelligent beings.</div>
-        <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xIB8Z_eyxrkFGZwGH3zNubE69y-ApWXAd5QwOJGRvVVgrrbzPBOrPOU&s" alt="Result Thumbnail">
-            </div>
-            
-            <div class="result">
-                <div class="title"><a href="https://builtin.com/artificial-intelligence" target="_blank">What Is Artificial Intelligence (AI)? | Built In</a></div>
-                <div class="url">https://builtin.com/artificial-intelligence</div>
-                <div class="snippet">Artificial intelligence systems work by using algorithms and data. First, a massive amount of data is collected and applied to mathematical models, or ...</div>
-        
-            </div>
-            
-            <div class="result">
-                <div class="title"><a href="https://www.investopedia.com/terms/a/artificial-intelligence-ai.asp" target="_blank">What Is Artificial Intelligence (AI)?</a></div>
-                <div class="url">https://www.investopedia.com/terms/a/artificial-intelligence-ai.asp</div>
-                <div class="snippet">Artificial intelligence technology allows computers and machines to simulate human intelligence and problem-solving capabilities.</div>
-        <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuypIKd4-eMaHpeJyFV0hbxv0w5ccJtftiyyrEsxoXFYNR3DYlIM_NbP3w&s" alt="Result Thumbnail">
-            </div>
-            
-            <div class="result">
-                <div class="title"><a href="https://digital-strategy.ec.europa.eu/en/policies/european-approach-artificial-intelligence" target="_blank">European approach to artificial intelligence | Shaping Europe's ...</a></div>
-                <div class="url">https://digital-strategy.ec.europa.eu/.../european-approach-artificial-intellige...</div>
-                <div class="snippet">Dig deeper ... The international outreach for human-centric artificial intelligence initiative will help promote the EU's vision on sustainable and trustworthy AI ...</div>
-        
-            </div>
-            
-            <div class="result">
-                <div class="title"><a href="https://cloud.google.com/learn/what-is-artificial-intelligence" target="_blank">What Is Artificial Intelligence (AI)? | Google Cloud</a></div>
-                <div class="url">https://cloud.google.com/learn/what-is-artificial-intelligence</div>
-                <div class="snippet">What is Artificial Intelligence (AI)?. Artificial intelligence (AI) is a set of technologies that enable computers to perform a variety of advanced functions, ...</div>
-        <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVQyWs5Uso3eBwGJxz7yY-ItXN2aDgKeFgK1iz7jf83Vnzzf6TBA60Pv8&s" alt="Result Thumbnail">
-            </div>
-            
-            <div class="result">
-                <div class="title"><a href="https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html" target="_blank">The Artificial Intelligence Revolution: Part 1 - Wait But Why</a></div>
-                <div class="url">https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html</div>
-                <div class="snippet">Jan 22, 2015 ... The idea is that we'd build a computer whose two major skills would be doing research on AI and coding changes into itself—allowing it to not ...</div>
-        <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIK8plakVNfR_5irQ7V6GRQi5QNjWPMiUfuy3VMxFHiEMw8C4KB_aSvrIm&s" alt="Result Thumbnail">
-            </div>
-            
+                </div>
+                
+                <div class="result">
+                    <div class="title"><a href="https://www.youtube.com/@SpaceX" target="_blank">SpaceX - YouTube</a></div>
+                    <div class="url">https://www.youtube.com/@SpaceX</div>
+                    <div class="snippet">SpaceX designs, manufactures and launches the world's most advanced rockets and spacecraft.</div>
+            <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4cZWCIkreNqXjTR5NJfJUa0uPeA-FXDjuPRE7Uuk9ckmY_3G4gDt8Am0&s" alt="Result Thumbnail">
+                </div>
+                
+                <div class="result">
+                    <div class="title"><a href="https://www.instagram.com/spacex/?hl=en" target="_blank">SpaceX (@spacex) • Instagram photos and videos</a></div>
+                    <div class="url">https://www.instagram.com/spacex/?hl=en</div>
+                    <div class="snippet">SpaceX designs, manufactures and launches the world's most advanced rockets and spacecraft · Photo by SpaceX on April 10, 2024. · Photo shared by SpaceX on ...</div>
+            <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_Lra-h2TRgI6a4JbXhp1Ff0BRyAzhionmO3rzVVtzWv7IEs7l2ZLpxsX&s" alt="Result Thumbnail">
+                </div>
+                
+                <div class="result">
+                    <div class="title"><a href="https://www.youtube.com/channel/UCtI0Hodo5o5dUb67FeUjDeA" target="_blank">SpaceX - YouTube</a></div>
+                    <div class="url">https://www.youtube.com/channel/UCtI0Hodo5o5dUb67FeUjDeA</div>
+                    <div class="snippet">Share your videos with friends, family, and the world.</div>
+            <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4cZWCIkreNqXjTR5NJfJUa0uPeA-FXDjuPRE7Uuk9ckmY_3G4gDt8Am0&s" alt="Result Thumbnail">
+                </div>
+                
+                <div class="result">
+                    <div class="title"><a href="https://www.nasa.gov/news-release/as-artemis-moves-forward-nasa-picks-spacex-to-land-next-americans-on-moon/" target="_blank">As Artemis Moves Forward, NASA Picks SpaceX to Land Next ...</a></div>
+                    <div class="url">https://www.nasa.gov/.../as-artemis-moves-forward-nasa-picks-spacex-to-la...</div>
+                    <div class="snippet">Apr 16, 2021 ... NASA is getting ready to send astronauts to explore more of the Moon as part of the Artemis program, and the agency has selected SpaceX to ...</div>
+            <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReXmJzsQVKQTFURKnvS7ls1Otz1MwDa2Q7jJqGARVFF7VQjCJdbcNW89fU&s" alt="Result Thumbnail">
+                </div>
+                
+                <div class="result">
+                    <div class="title"><a href="https://www.space.com/18853-spacex.html" target="_blank">SpaceX: Facts About Elon Musk's Private Spaceflight Company ...</a></div>
+                    <div class="url">https://www.space.com/18853-spacex.html</div>
+                    <div class="snippet">Apr 27, 2022 ... SpaceX is a private spaceflight company that sends satellites and people to space, including NASA crews to the International Space Station (ISS) ...</div>
+            <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG7QkWB8BMA9ovvVrgrXDhNu_2G0FQ4Uxf6VAZJzpMd1UxpoXQFDVJRKmi&s" alt="Result Thumbnail">
+                </div>
+                
             </div>
             <div class="summary">
                 <!-- Summary container -->
@@ -138,20 +163,125 @@
                 <!-- Summary title -->
                 <blockquote>
 <p><strong>Summary:</strong></p>
-<p>Artificial Intelligence (AI) is a field of computing that focuses on developing machines that can perceive, understand, and react to their environment. AI systems use algorithms and data to simulate human intelligence, enabling computers to perform tasks that typically require human cognition, such as learning, problem-solving, and decision-making.</p>
-<p><strong>Assistant's Response:</strong></p>
-<p>Hi there! Welcome to AI Land. I'm here to assist you with any questions related to Artificial Intelligence.</p>
-<p>AI is a fascinating field that empowers machines to acquire and apply knowledge like humans. It encompasses various techniques, including:</p>
+<p>SpaceX, founded by Elon Musk in 2002, is a leading aerospace manufacturer and launch provider specializing in advanced rockets and spacecraft.</p>
+<p><strong>Mission and Purpose:</strong></p>
+<p>SpaceX aims to revolutionize space technology, reduce transportation costs, and establish a sustainable colony on Mars.</p>
+<p><strong>Products and Services:</strong></p>
 <ul>
-<li>Machine learning: Automating the learning process from data.</li>
-<li>Natural language processing: Allowing computers to understand and generate human language.</li>
-<li>Image recognition: Enabling machines to 'see' and interpret images.</li>
-<li>Robotics: Developing machines that can physically interact with the world.</li>
+<li>Rockets and spacecraft</li>
+<li>Satellite launches</li>
+<li>Crew transportation to the International Space Station</li>
+<li>High-speed internet service through Starlink</li>
 </ul>
-<p>AI finds applications in numerous domains, including healthcare, finance, transportation, and entertainment. By imitating human cognitive abilities, AI systems augment our capabilities and drive innovation across industries.</p>
-<p>Don't hesitate to ask if you have any more AI-related queries. I'm here to help you navigate the exciting world of artificial intelligence!</p>
+<p><strong>Key Achievements:</strong></p>
+<ul>
+<li>First private company to send a spacecraft to the International Space Station (ISS)</li>
+<li>First commercial launch of a human-carrying spacecraft</li>
+<li>First private company to land a spacecraft on Mars (unmanned)</li>
+</ul>
+<p><strong>Future Plans:</strong></p>
+<p>SpaceX is currently working on:</p>
+<ul>
+<li>Developing reusable rockets and spacecraft</li>
+<li>Establishing a base on the Moon</li>
+<li>Sending humans to Mars</li>
+<li>Providing global internet access through Starlink</li>
+</ul>
+<p><strong>Ideas and Suggestions:</strong></p>
+<ul>
+<li>SpaceX could potentially collaborate with other companies to develop new space technologies and ventures.</li>
+<li>The company could explore the potential for mining resources on other planets or moons.</li>
+<li>SpaceX could invest in research on sustainable space exploration and habitat development.</li>
+</ul>
 </blockquote>
+                <!-- Summary content -->
+            
+
+            
+                <!-- Related YouTube Videos --> 
+                <hr>
+
+                <h3>Related YouTube Videos</h2>
+                
+            
+            <div class="youtube-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/E4Dzgg-j-Dk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div>
+            
+            
+            <div class="youtube-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ApMrILhTulI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div>
+            
+            
+            <div class="youtube-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/TzcE_7eRsPA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div>
+            
+            
+            <div class="youtube-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/NWM1NQ1tZEU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div>
+            
+            
+            <hr>
+            <h3>Related Images</h3>
             </div>
+            <div class="image-container">
+
+            
+            <div class="image">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/2023-05-22t004316z-2116487779-rc2831auwisd-rtrmadp-3-space-exploration-iss-axiom.jpg?c=16x9&q=h_833,w_1480,c_fill" alt="Image">
+            </div>
+            
+            
+            <div class="image">
+            <img src="https://wp.technologyreview.com/wp-content/uploads/2021/12/48953946911_7dae1036a2_o.jpg" alt="Image">
+            </div>
+            
+            
+            <div class="image">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/The_SpaceX_Factory.jpg" alt="Image">
+            </div>
+            
+            
+            <div class="image">
+            <img src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/M6MMXFKAHNKFFJOQX7Y3KNVL3I.jpg" alt="Image">
+            </div>
+            
+            
+            <div class="image">
+            <img src="https://www.nasa.gov/wp-content/uploads/2023/08/jsc2023e047425_alt.jpg?w=985" alt="Image">
+            </div>
+            
+            
+            <div class="image">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/JXD3HXEM6MI6ZDO5KIJWTCGSMM.jpg&w=1200" alt="Image">
+            </div>
+            
+            
+            <div class="image">
+            <img src="https://www.nasaspaceflight.com/wp-content/uploads/2024/03/T10-Liftoff.jpg" alt="Image">
+            </div>
+            
+            
+            <div class="image">
+            <img src="https://i0.wp.com/spacenews.com/wp-content/uploads/2020/10/40126461411_a6e49a61f2_k.jpg?fit=1200%2C800&ssl=1" alt="Image">
+            </div>
+            
+            
+            <div class="image">
+            <img src="https://www.nasaspaceflight.com/wp-content/uploads/2023/12/GCfdqMgWsAAtMjx.jpg" alt="Image">
+            </div>
+            
+            
+            <div class="image">
+            <img src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/03/starship-tankingtest-march24.jpg?fit=1200%2C675&ssl=1" alt="Image">
+            </div>
+            
+            
+        </div>
+
         </body>
         </html>
         

@@ -1,21 +1,34 @@
-import SearchMan 
-import AiMan as A
+import SearchMan as SM
+import AiMan as AM
 
 class ContentMan:
     def __init__(self):
-        self.Ai = A.AiMan()
+        self.Ai = AM.AiMan()
+        self.sm = SM.SearchMan()
+
         self.GeneratedView = ""
         self.AiGeneratedSummary = ""
         self.youtubeLinks =[]
         self.imagesLinks = []
 
-    def GenerateWebPagebasedOnContent(self,TextContent):
 
-        self.AiGeneratedSummary = self.Ai.ProcessContentData(TextContent)
+    def GenerateWebPagebasedOnContent(self,query):
+        result = self.sm.QueryInternetForWebLinks(query)
+        PromtQuery = self.sm.GeneratePromptForGemini(result)
+
+       
+        self.AiGeneratedSummary = self.Ai.ProcessContentData(PromtQuery)
+        
+        self.youtubeLinks = self.sm.QueryInternetForYoutubeLinks(query)
+        self.imagesLinks = self.sm.QueryInternetForImages(query)
+
+        self.GeneratedView = self.AiGeneratedSummary
+
+
+        self.create_html_file(result.get("items",[]))
 
 
     def create_html_file(self, search_results, output_file=r'templates\search_results.html'):
-
         html_content = """
         <!DOCTYPE html>
         <html lang="en">
@@ -67,34 +80,62 @@ class ContentMan:
                     color: #6C757D;
                     margin-bottom: 15px;
                 }
-                .image {
-                    max-width: 100%;
-                    height: auto;
-                    margin-top: 10px;
-                    border-radius: 8px;
+
+                hr {
+                    border: 1px solid black;
+                    width: 100%;
                 }
-            </style>
-        </head>
-        <body>
-            <div class="search-results">
-                <h1>MIRS Search Results</h1>
-        """
+
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between images */
+}
+
+/* Style for individual images */
+.image-container img {
+    width: calc(50% - 10px); /* 50% of the container width minus half the gap */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    object-fit: cover; /* Ensure the image covers the entire container */
+}
+                .youtube-video {
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
+                .youtube-video-title {
+                    font-size: 1.5em;
+}
+                            </style>
+                        </head>
+                        <body>
+                            <div class="search-results">
+                                <h1>MIRS Search Results</h1>
+                        """
 
         for result in search_results:
-            html_content += f"""
-            <div class="result">
-                <div class="title"><a href="{result['link']}" target="_blank">{result['title']}</a></div>
-                <div class="url">{result['formattedUrl']}</div>
-                <div class="snippet">{result['snippet']}</div>
-        """
-
-            if 'pagemap' in result and 'cse_thumbnail' in result['pagemap']:
-                thumbnail = result['pagemap']['cse_thumbnail'][0]['src']
-                html_content += f'<img class="image" src="{thumbnail}" alt="Result Thumbnail">'
-            
-            html_content += """
-            </div>
+            try:
+                html_content += f"""
+                <div class="result">
+                    <div class="title"><a href="{result['link']}" target="_blank">{result['title']}</a></div>
+                    <div class="url">{result['formattedUrl']}</div>
+                    <div class="snippet">{result['snippet']}</div>
             """
+
+                if 'pagemap' in result and 'cse_thumbnail' in result['pagemap']:
+                    thumbnail = result['pagemap']['cse_thumbnail'][0]['src']
+                    html_content += f'<img class="image" src="{thumbnail}" alt="Result Thumbnail">'
+                
+                html_content += """
+                </div>
+                """
+            except:
+                pass
 
         html_content += f"""
             </div>
@@ -103,7 +144,47 @@ class ContentMan:
                 <h2>MIRS Summary</h2>
                 <!-- Summary title -->
                 {self.AiGeneratedSummary}
+                <!-- Summary content -->
+            
+
+            """
+        
+        html_content += f"""
+                <!-- Related YouTube Videos --> 
+                <hr>
+
+                <h3>Related YouTube Videos</h2>
+                
+            """
+        
+
+        for link in self.youtubeLinks:
+            html_content+=f"""
+            <div class="youtube-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{link}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div>
+            
+            """
+
+        html_content+="""
+            <hr>
+            <h3>Related Images</h3>
             </div>
+            <div class="image-container">
+
+            """
+
+        for link in self.imagesLinks:
+            html_content+=f"""
+            <div class="image">
+            <img src="{link}" alt="Image">
+            </div>
+            
+            """
+
+        html_content += f"""
+        </div>
+
         </body>
         </html>
         """

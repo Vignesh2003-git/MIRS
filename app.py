@@ -7,7 +7,7 @@ cred_json = read_credentials_file("Credentials.json")
 
 app = Flask(__name__)
 
-
+cm = CM.ContentMan()
 
 @app.route("/")
 def index():
@@ -19,31 +19,7 @@ def search():
     if request.method == "POST":
         query = request.form["query"]
 
-
-        x = CM.ContentMan()
-
-        obj = SM.SearchMan()
-
-        
-
-        result = obj.QueryInternetForWebLinks(query)
-
-        QueryReq = "Summarize the following Web sniptets, and finally tell about all like a browser virtual assistant ["
-
-        for i in result:
-            QueryReq+=i["snippet"]+", "
-
-        QueryReq+="]"
-
-
-
-        
-    
-        x.GenerateWebPagebasedOnContent(QueryReq)
-        
-        x.create_html_file(result)
-        
-        
+        cm.GenerateWebPagebasedOnContent(query)
         return render_template("search_results.html")
     
 

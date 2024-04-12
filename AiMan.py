@@ -20,7 +20,6 @@ class AiMan:
         API_KEY = self.cred_json['Google_Gemini']['google_Gemini_key']       
         genai.configure(api_key=API_KEY)
         self.model = genai.GenerativeModel('gemini-pro')
-        print("1111111111111111111111111111111111111111111111111111111111111111111111111")
 
     def ProcessContentData(self,Content:str):
         
@@ -34,7 +33,7 @@ class AiMan:
     def Produce_Text(self,Content:str):
         response = self.model.generate_content(Content)
         myData = to_HTML(response.text)
-        print(myData)
+        
         return myData
 
     def Produce_ImageURL(self,Content:str):
@@ -45,3 +44,12 @@ class AiMan:
 
     def Produce_YoutubeVideoURL(self,Content:str):
         pass
+
+if(__name__ == "__main__"):
+    Ai = AiMan()
+    Ai.ProcessContentData("How smart is a human?")
+    Ai.ProcessContentData("What is the meaning of life?")
+    Ai.ProcessContentData("What is the future of AI?")
+    Ai.ProcessContentData("What is the meaning of love?")
+    Ai.ProcessContentData("What is the meaning of death?")
+    Ai.ProcessContentData("What is the meaning of the universe?")
